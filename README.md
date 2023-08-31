@@ -28,43 +28,37 @@ Create an instance of the `Basket` class. You'll need to provide it with a produ
 
 Use the product codes to add items to your basket:
 
-\```php
-$basket->add('R01');
-\```
+    $basket->add('R01');
 
 ### Getting the Total
 
 To retrieve the total cost of the basket, which includes the product prices, delivery costs, and any applicable offers:
 
-\```php
-echo $basket->total();
-\```
+    echo $basket->total();
 
 ## Code Example
 
 Here's a practical example of using the sales system:
 
-\```php
-include 'Basket.php';
+    include 'Basket.php';
 
-$catalogue = [
-    'R01' => 32.95,
-    'G01' => 24.95,
-    'B01' => 7.95
-];
+    $catalogue = [
+        'R01' => 32.95,
+        'G01' => 24.95,
+        'B01' => 7.95
+    ];
 
-$deliveryRules = [
-    ['limit' => 50, 'charge' => 4.95],
-    ['limit' => 90, 'charge' => 2.95],
-    ['limit' => PHP_INT_MAX, 'charge' => 0]
-];
+    $deliveryRules = [
+        ['limit' => 50, 'charge' => 4.95],
+        ['limit' => 90, 'charge' => 2.95],
+        ['limit' => PHP_INT_MAX, 'charge' => 0]
+    ];
 
-$basket = new Basket($catalogue, $deliveryRules);
-$basket->add('R01');
-$basket->add('R01');
-
-echo $basket->total();  // Expected output: $54.37
-\```
+    $basket = new Basket($catalogue, $deliveryRules);
+    $basket->add('R01');
+    $basket->add('R01');
+    
+    echo $basket->total();  // Expected output: $54.37
 
 ## Special Offers
 
